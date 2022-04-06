@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12/Laravel">
+    <description>PSR12 and Laravel</description>
+
+    <arg name="extensions" value="php" />
+
+    <rule ref="PSR12">
+        <!-- 除外項目 -->
+        <exclude name="PSR2.Methods.FunctionCallSignature.MultipleArguments"/>
+        <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
+    </rule>
+
+    <arg name="colors" />
+
+    <arg value="ps" />
+
+    <!-- 除外ディレクトリ -->
+    <exclude-pattern>/bootstrap/</exclude-pattern>
+    <exclude-pattern>/config/</exclude-pattern>
+    <exclude-pattern>/database/</exclude-pattern>
+    <exclude-pattern>/node_modules/</exclude-pattern>
+    <exclude-pattern>/public/</exclude-pattern>
+    <exclude-pattern>/Modules/Admin/Resources/</exclude-pattern>
+    <exclude-pattern>/Modules/Api/Resources/</exclude-pattern>
+    <exclude-pattern>/resources/</exclude-pattern>
+    <exclude-pattern>/tests/</exclude-pattern>
+    <exclude-pattern>/routes/</exclude-pattern>
+    <exclude-pattern>/resources/</exclude-pattern>
+    <exclude-pattern>/storage/</exclude-pattern>
+    <exclude-pattern>/docker/</exclude-pattern>
+    <exclude-pattern>/build/</exclude-pattern>
+    <exclude-pattern>/vendor/</exclude-pattern>
+    <exclude-pattern>/_ide_helper.php</exclude-pattern>
+    <exclude-pattern>/_ide_helper_models.php</exclude-pattern>
+    <exclude-pattern>/server.php</exclude-pattern>
+</ruleset>

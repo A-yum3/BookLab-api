@@ -15,8 +15,6 @@ create-project:
 	@make fresh
 install-recommend-packages:
 	docker compose exec app composer require doctrine/dbal
-	docker compose exec app composer require --dev ucan-lab/laravel-dacapo
-	docker compose exec app composer require --dev barryvdh/laravel-ide-helper
 	docker compose exec app composer require --dev beyondcode/laravel-dump-server
 	docker compose exec app composer require --dev barryvdh/laravel-debugbar
 	docker compose exec app composer require --dev roave/security-advisories:dev-master
@@ -105,3 +103,5 @@ ide-helper:
 	docker compose exec app php artisan ide-helper:generate
 	docker compose exec app php artisan ide-helper:meta
 	docker compose exec app php artisan ide-helper:models --nowrite
+	docker compose exec app php artisan lighthouse:ide-helper
+
