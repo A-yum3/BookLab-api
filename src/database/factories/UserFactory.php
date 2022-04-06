@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enum\UserRoleType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -23,20 +24,31 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'avatar' => $this->faker->imageUrl,
+            'provider' => 'Google',
+            'provider_id' => $this->faker->isbn10(),
+            'role' => UserRoleType::Normal
         ];
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return static
+     * @return $this
      */
-    public function unverified()
+    public function normal(): self
     {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
+        return $this->state(fn() => [
+            'role' => UserRoleType::Normal
+        ]);
     }
+
+    /**
+     * @return $this
+     */
+    public function admin(): self
+    {
+        return $this->state(fn() => [
+            'role' => UserRoleType::Admin
+        ]);
+    }
+
 }

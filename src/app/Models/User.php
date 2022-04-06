@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enum\UserRoleType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -47,8 +47,9 @@ class User extends Authenticatable
         'updated_at' => 'immutable_datetime',
         'created_at' => 'immutable_datetime',
         'email_verified_at' => 'datetime',
+        'role' => UserRoleType::class
     ];
-    
+
     /**
      * @return HasMany
      */
