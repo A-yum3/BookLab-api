@@ -13,6 +13,11 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'google' => [
+        'client_id' => env('GL_ID'),
+        'client_secret' => env('GL_SECRET'),
+        'redirect' => env('APP_URL') . '/oauth/google/callback',
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
