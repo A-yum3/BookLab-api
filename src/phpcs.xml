@@ -2,7 +2,7 @@
 <ruleset name="PSR12/Laravel">
     <description>PSR12 and Laravel</description>
 
-    <arg name="extensions" value="php" />
+    <arg name="extensions" value="php"/>
 
     <rule ref="PSR12">
         <!-- 除外項目 -->
@@ -10,9 +10,9 @@
         <exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody"/>
     </rule>
 
-    <arg name="colors" />
+    <arg name="colors"/>
 
-    <arg value="ps" />
+    <arg value="ps"/>
 
     <!-- 除外ディレクトリ -->
     <exclude-pattern>/bootstrap/</exclude-pattern>
@@ -33,4 +33,5 @@
     <exclude-pattern>/_ide_helper.php</exclude-pattern>
     <exclude-pattern>/_ide_helper_models.php</exclude-pattern>
     <exclude-pattern>/server.php</exclude-pattern>
+    <exclude-pattern>_lighthouse_ide_helper.php</exclude-pattern>
 </ruleset>
