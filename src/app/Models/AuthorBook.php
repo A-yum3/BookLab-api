@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AuthorBook extends Model
 {
+    protected $casts = [
+        'updated_at' => 'immutable_datetime',
+        'created_at' => 'immutable_datetime'
+    ];
+
     /**
      * @return BelongsTo
      */

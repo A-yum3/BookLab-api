@@ -44,9 +44,11 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
+        'updated_at' => 'immutable_datetime',
+        'created_at' => 'immutable_datetime',
         'email_verified_at' => 'datetime',
     ];
-
+    
     /**
      * @return HasMany
      */

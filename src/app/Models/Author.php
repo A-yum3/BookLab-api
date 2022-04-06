@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Author extends Model
 {
+    protected $casts = [
+        'updated_at' => 'immutable_datetime',
+        'created_at' => 'immutable_datetime'
+    ];
 
     /**
      * @return HasMany

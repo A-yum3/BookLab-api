@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class BookLoanHistory extends Model
 {
+    protected $casts = [
+        'updated_at' => 'immutable_datetime',
+        'created_at' => 'immutable_datetime',
+        'checkout_at' => 'immutable_datetime',
+        'return_at' => 'immutable_datetime'
+    ];
 
     /**
      * @return BelongsTo

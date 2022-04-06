@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Book extends Model
 {
+    protected $casts = [
+        'publish_at' => 'immutable_datetime',
+        'created_at' => 'immutable_datetime',
+        'updated_at' => 'immutable_datetime'
+    ];
+
     /**
      * @return BelongsTo
      */
