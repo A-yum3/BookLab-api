@@ -1,20 +1,34 @@
-"""Googleログインを行った利用ユーザー"""
+"""
+Googleログインを行った利用ユーザー
+"""
 type User {
-    "Unique primary key."
+    """
+    ユーザーID
+    """
     id: ID!
 
-    "Non-unique name."
+    """
+    Googleアカウントに登録されている名前
+    """
     name: String!
 
-    "Unique email address."
+    """
+    Googleアカウントに登録されているメールアドレス
+    """
     email: String!
 
-    "When the email was verified."
-    email_verified_at: DateTime
+    """
+    プロフィール画像URL
+    """
+    avatar: String!
 
-    "When the account was created."
+    """
+    アクセストークン
+    """
+    access_token: String!
+
+    """
+    アカウント作成日
+    """
     created_at: DateTime!
-
-    "When the account was last updated."
-    updated_at: DateTime!
 }

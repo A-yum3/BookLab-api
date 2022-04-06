@@ -1,0 +1,38 @@
+"""
+登録されている書籍
+"""
+type Book {
+    """
+    書籍ID
+    """
+    id: ID!
+
+    """
+    書籍のタイトル
+    """
+    title: String!
+
+    """
+    書籍の説明
+    """
+    description: String
+
+    """
+    書籍の出版日
+    """
+    publish_at: DateTime!
+
+    """
+    BookLabに書籍が登録された日時
+    """
+    created_at: DateTime!
+}
+
+extend type Query {
+    book(
+        """
+        ID検索
+        """
+        id: ID @eq
+    ): Book @find
+}
